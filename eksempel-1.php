@@ -1,10 +1,16 @@
 <?php     /* Eksempel 1 */
 /*
-/*    Programmet skriver ut tallene fra 1 til 10 på hver sin linje
-/*    Eksempelet viser bruk av for-setning
+/*    Programmet mottar fra et HTML-skjema et svar på spørsmålet "Hva er 3 ganger 3 ?"
+/*    Programmet sjekker om svaret er riktig og skriver ut en melding ang. svaret 
 */
-  for ($tall=1;$tall<=10;$tall++)  
+  $svar=$_POST ["svar"];
+	
+  if ($svar == 9)  
     {
-      print("$tall <br/>");  
+      print("Riktig. 3 ganger 3 er 9 ");
+    }
+  else  
+    {
+      print("Feil. 3 ganger 3 er ikke  $svar. 3 ganger 3 er 9 ");
     }
 ?>

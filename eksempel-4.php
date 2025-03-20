@@ -1,14 +1,34 @@
 <?php     /* Eksempel 4 */
 /*
-/*    Programmet legger inn antall dager i hver måned i et array
-/*    Programmet skriver ut antall dager i hver måned
+/*    Programmet mottar fra et HTML-skjema et svar på spørsmålet "Er du student (j/n) ?"
+/*      og et svar på spørsmålet "Hvor gammel er du ?"
+/*    Programmet sjekker hva som er svart på spørsmålene og skriver ut en passende melding
 */
-  $antallDager=array(1=>31,28,31,30,31,30,31,31,30,31,30,31);
-
-  print("Antall dager i september er $antallDager[9] <br/><br/>");
-
-  for ($mnd=1;$mnd<=12;$mnd++)
-    {
-      print("Antall dager i m&aring;ned $mnd er $antallDager[$mnd] <br/>"); 
+  $student=$_POST ["student"];
+  $alder=$_POST ["alder"]; 
+	
+  if (!$student or !$alder)  
+    {   
+      print("Du har ikke svart på begge spørsmålene ");
+    }
+  else if ($student == "j" and $alder < 20)  
+    {   
+      print("Du er student og er under 20 år ");
+    }
+  else if ($student == "j" and $alder >= 20)  
+    {   
+      print("Du er student og er 20 år eller mer ");
+    }
+  else if ($student == "n" and $alder < 20)
+    {   
+      print("Du er ikke student og er under 20 år  ");
+    }
+  else if ($student == "n" and $alder >= 20)
+    {   
+      print("Du er ikke student og er 20 år eller mer ");
+    }
+  else  
+    {   
+      print("Begge spørsmålene har ikke gyldige svar");
     }
 ?>

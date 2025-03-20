@@ -1,16 +1,24 @@
 <?php     /* Eksempel 3 */
 /*
-/*    Programmet legger inn 3 navn i et array
-/*    Programmet skriver ut de 3 navnene
+/*    Programmet mottar fra et HTML-skjema et svar på spørsmålet "Er du student (j/n) ?"
+/*    Programmet sjekker om det er svart j eller n på spørsmålet og skriver ut en passende melding
 */
-  $navn=array("Geir","Marius","Tove");  
-
-  print("Det fÃ¸rste navnet er $navn[0]<br/>");
-
-  print("Alle navnene er <br/> ");
-
-  for ($nr=0;$nr<count($navn);$nr++)
+  $svar=$_POST ["svar"];
+	
+  if (!$svar)  
     {
-      print("$navn[$nr] <br/>");   
+      print("Du har ikke svart på spørsmålet om du er student ");
+    }
+  else if ($svar == "j")  
+    {
+      print("Du har svart j på spørsmålet om du er student ");
+    }
+  else if ($svar == "n") 
+    {
+      print("Du har svart n på spørsmålet om du er student ");
+    }
+  else  
+    {
+      print("Du har ikke svart j eller n på spørsmålet om du er student ");
     }
 ?>
