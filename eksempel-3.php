@@ -1,16 +1,24 @@
-<?php     /* Eksempel 3 */
+<?php  /*  Eksempel 3 */
 /*
-/*    Programmet legger inn 3 navn i et array
-/*    Programmet skriver ut de 3 navnene
+/*    Programmet mottar postnr fra et HTML-skjema 
+/*    Programmet sjekker om postnr er korrekt fylt ut
 */
-  $navn=array("Geir","Marius","Tove");  
+  $postnr=$_POST ["postnr"];
 
-  print("Det fÃ¸rste navnet er $navn[0]<br/>");
-
-  print("Alle navnene er <br/> ");
-
-  for ($nr=0;$nr<count($navn);$nr++)
+  if (!$postnr)  /* postnr er ikke fylt ut */
     {
-      print("$navn[$nr] <br/>");   
+      print("Postnr er ikke fylt ut <br />");
     }
+  else if (strlen($postnr)!=4)  /* postnr består ikke av 4 tegn */
+    {
+          print("Postnr består ikke av 4 tegn <br />");
+    }
+  else if (!ctype_digit($postnr))  /* minst ett av tegnene er ikke et siffer */
+    {
+       print("Postnr består ikke bare av siffre  <br />");
+    }
+else
+	{
+		print("Postnr er korrekt fylt ut <br />");
+	}
 ?>

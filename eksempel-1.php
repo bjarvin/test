@@ -1,10 +1,19 @@
-<?php     /* Eksempel 1 */
+<?php    /* Eksempel 1 */
 /*
-/*    Programmet skriver ut tallene fra 1 til 10 på hver sin linje
-/*    Eksempelet viser bruk av for-setning
+/*    Programmet mottar fra et HTML-skjema et fornavn og et etternavn ved POST-metoden
+/*    Programmet lager et fullt navn ved bruk av en egendefinert fuksjon 
 */
-  for ($tall=1;$tall<=10;$tall++)  
-    {
-      print("$tall <br/>");  
-    }
+
+function fulltNavn($fornavn,$etternavn)
+{
+  $navn=$fornavn . " " . $etternavn;	
+  return $navn; 	
+}
+
+  $fornavn=$_POST ["fornavn"];
+  $etternavn=$_POST ["etternavn"];  
+
+  $navn=fulltNavn($fornavn,$etternavn);
+
+  print ("Navnet er $navn");  
 ?>

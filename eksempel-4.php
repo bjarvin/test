@@ -1,14 +1,49 @@
-<?php     /* Eksempel 4 */
+<?php  /*  Eksempel 2 */
 /*
-/*    Programmet legger inn antall dager i hver måned i et array
-/*    Programmet skriver ut antall dager i hver måned
+/*    Programmet mottar klassekode fra et HTML-skjema 
+/*    Programmet sjekker om klassekode er korrekt fylt ut
 */
-  $antallDager=array(1=>31,28,31,30,31,30,31,31,30,31,30,31);
+  $klassekode=$_POST ["klassekode"];
 
-  print("Antall dager i september er $antallDager[9] <br/><br/>");
+  $lovligKlassekode=true;
 
-  for ($mnd=1;$mnd<=12;$mnd++)
+  if (!$klassekode)  /* klassekode er ikke fylt ut */
     {
-      print("Antall dager i m&aring;ned $mnd er $antallDager[$mnd] <br/>"); 
+      $lovligKlassekode=false;
+      print("Klassekode er ikke fylt ut <br />");
+    }
+  else if (strlen($klassekode)!=3)  /* klassekode består ikke av 3 tegn */
+    {
+      $lovligKlassekode=false;
+      print("Klassekode best&aring;r ikke av 3 tegn <br />");
+    }
+  else
+    {
+      $tegn1=$klassekode[0];   /* første tegn i klassekoden  */
+      $tegn2=$klassekode[1];   /* andre tegn i klassekoden  */
+      $tegn3=$klassekode[2];   /* tredje tegn i klassekoden  */
+
+      if (!ctype_alpha($tegn1))  /* tegn1 er ikke bokstav */ 
+        {
+          $lovligKlassekode=false;
+          print("Første tegn er ikke en bokstav <br />");
+        }
+		
+      if (!ctype_alpha($tegn2))  /* tegn2 er ikke bokstav */
+        {
+          $lovligKlassekode=false;
+          print("Andre tegn er ikke en bokstav <br />");
+        }
+		
+      if (!ctype_digit($tegn3))  /* tegn3 er ikke et siffer */ 
+        {
+          $lovligKlassekode=false;
+          print("Siste tegn er ikke et siffer  <br />");
+        }
+    }
+
+  if ($lovligKlassekode)  /* klassekode er  korrekt fylt ut */
+    {
+      print("Klassekode er korrekt fylt ut <br />");
     }
 ?>

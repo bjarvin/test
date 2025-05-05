@@ -4,11 +4,12 @@
   <title>Eksempel 4</title>
 </head>
 <body>
-  <h3>Eksempel 4</h3>
+  <h3>Eksempel 4 (validering av klassekode) </h3>
     
-  <form method="post" action="eksempel-4.php" id="eksempel4" name="eksempel4">
-    Trykk Fortsett for &aring; skrive ut antall dager i hver m&aring;ned  <br/>
-    <input type="submit" value="Fortsett" id="fortsett" name="fortsett" /> <br />
+  <form method="post" action="eksempel-4.php" id="registrerKlassekodeSkjema" name="registrerKlassekodeSkjema" >
+    Klassekode <input type="text" name="klassekode" id="klassekode"> <font color="#FF0000">*</font> <em> (klassekode skal inneholde 2 bokstaver og 1 siffer)</em> <br />
+    <input type="submit" value="Registrer klassekode" id="registrerKlassekodeKnapp" name="registrerKlassekodeKnapp" />
+    <input type="reset" value="Nullstill" name="nullstill" id="nullstill" /> <br />
   </form>
 </body>
 </html>

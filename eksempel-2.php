@@ -1,13 +1,16 @@
-<?php     /* Eksempel 2 */
+<?php  /*  Eksempel 2 */
 /*
-/*    Programmet skriver ut tallene fra 1 til 10 på hver sin linje
-/*    Eksempelet viser bruk av while-setning
+/*    Programmet mottar fra et HTML-skjema et fornavn og et etternavn ved POST-metoden
+/*    Programmet lager et fullt navn ved å inkludere en egendefinert fuksjon 
 */
-  $tall=1;  
 
-  while ($tall<=10)
-    {
-      print("$tall <br/>"); 
-      $tall++;  
-    }
+  include("funksjoner.php");  /* funksjoner inkludert */
+
+  $fornavn=$_POST ["fornavn"];
+  $etternavn=$_POST ["etternavn"];  
+
+  $navn=fulltNavn($fornavn,$etternavn);
+
+  print ("Navnet er $navn");  
+
 ?>
