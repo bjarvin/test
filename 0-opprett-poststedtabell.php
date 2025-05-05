@@ -6,8 +6,9 @@
   
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-  $sqlSetning="CREATE TABLE IF NOT EXISTS klasse (klassekode CHAR(5) NOT NULL PRIMARY KEY,klasssenavn VARCHAR(50) NOT NULL,studiumkode VARCHAR(50) NOT NULL);";
+  $sqlSetning=" CREATE TABLE poststed (postnr CHAR(4) NOT NULL, poststed VARCHAR(30) NOT NULL, PRIMARY KEY (postnr));";
    
+  
   $sqlResultat=mysqli_query($db,$sqlSetning);
     /* SQL-setning sendt til database-serveren */
  
