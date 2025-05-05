@@ -4,7 +4,7 @@
 */
   include("db-tilkobling.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
 
-  $sqlSetning="CREATE TABLE klasse (klassekode CHAR(5) NOT NULL,klasssenavn VARCHAR(50) NOT NULL,studiumkode VARCHAR(50) NOT NULL,PRIMARY KEY (klassekode));";
+  $sqlSetning="SELECT * FROM poststed;";
   
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
     /* SQL-setning sendt til database-serveren */
