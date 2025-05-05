@@ -1,15 +1,36 @@
-<?php    /* Eksempel 2 */
-/*
-/*    Programmet mottar 2 tall fra et HTML-skjema ved POST-metoden
-/*    Programmet skriver ut de 2 tallene og summen og differansen av/mellom tallene
-*/
-  $tall1=$_POST ["tall1"];
-  $tall2=$_POST ["tall2"];  
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eksempel 2</title>
+</head>
+<body>
+  <h3>Eksempel 2</h3>
+    
+  <form method="post" action="" id="eksempel2" name="eksempel2">
+    Hva er 3 ganger 3 ? <input type="text" id="svar" name="svar" required  /> <br />
+    <input type="submit" value="Fortsett" id="fortsett" name="fortsett" />
+    <input type="reset" value="Nullstill" name="nullstill" id="nullstill" /> <br />
+  </form>
+</body>
+</html>
 
-  $summen=$tall1 + $tall2;  
-  $differansen=$tall1 - $tall2;  
-			
-  print ("Tall 1 er $tall1 <br />");
-  print ("Tall 2 er $tall2 <br />");
-  print ("Summen er $summen <br />");
-  print ("Differansen er $differansen <br />"); 
+<?php     /* Eksempel 2 */
+/*
+/*    Programmet mottar fra et HTML-skjema et svar på spørsmålet "Hva er 3 ganger 3 ?"
+/*    Programmet sjekker om svaret er riktig og skriver ut en melding ang. svaret 
+/*    Meldingen skrives ut på samme side som HTML-skjemaet er
+*/
+  if (isset($_POST ["fortsett"])) 
+    {
+      $svar=$_POST ["svar"];
+	
+      if ($svar == 9)  
+        {
+          print("Riktig. 3 ganger 3 er 9 ");
+        }
+      else 
+        {
+          print("Feil. 3 ganger 3 er ikke  $svar. 3 ganger 3 er 9 ");
+        }
+    }
+?>
