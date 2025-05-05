@@ -13,7 +13,7 @@ $database = getenv('DB_DATABASE');
 
   $sqlSetning="CREATE TABLE klasse (klassekode CHAR(5) NOT NULL,klasssenavn VARCHAR(50) NOT NULL,studiumkode VARCHAR(50) NOT NULL,PRIMARY KEY (klassekode));";
   
-  $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; opprette tabell i databasen");
+  $sqlResultat=mysqli_query($db,$sqlSetning);
     /* SQL-setning sendt til database-serveren */
 
     print("tabell opprettet");
