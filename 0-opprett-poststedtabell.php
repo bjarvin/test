@@ -6,7 +6,7 @@
   
   mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-  $sqlSetning="CREATE TABLE IF NOT EXISTS klasse (klassekode CHAR(5) NOT NULL,klasssenavn VARCHAR(50) NOT NULL,studiumkode VARCHAR(50) NOT NULL,PRIMARY KEY (klassekode));";
+  $sqlSetning="CREATE TABLE IF NOT EXISTS klasse (klassekode CHAR(5) NOT NULL PRIMARY KEY,klasssenavn VARCHAR(50) NOT NULL,studiumkode VARCHAR(50) NOT NULL);";
    
   $sqlResultat=mysqli_query($db,$sqlSetning);
     /* SQL-setning sendt til database-serveren */
