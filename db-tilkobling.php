@@ -11,7 +11,6 @@ $database = getenv('DB_DATABASE');
     /* tilkobling til database-serveren utført */
  print("tilkoblet db");
 
-?>
 
 
 
