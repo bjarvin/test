@@ -2,7 +2,7 @@
 /*
 /*  Programmet foretar tilkobling til database-server og valg av database
 */
-include("de-tilkobling.php");
+include("db-tilkobling.php");
 
  $sqlSetning="CREATE TABLE klasse (klassekode CHAR(5) NOT NULL,klasssenavn VARCHAR(50) NOT NULL,studiumkode VARCHAR(50) NOT NULL,PRIMARY KEY (klassekode));";
   
