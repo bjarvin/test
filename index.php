@@ -9,6 +9,7 @@ $database = getenv('DB_DATABASE');
 
   $db=mysqli_connect($host,$username,$password,$database) or die ("ikke kontakt med database-server");
     /* tilkobling til database-serveren utført */
+  print("tilkoblet db");
 ?>
 
 
