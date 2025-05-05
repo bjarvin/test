@@ -10,7 +10,7 @@
   Avis <br />
   <input type ="checkbox" id="avis" name="avis[]" value="aftenposten" />aftenposten <br />
   <input type ="checkbox" id="avis" name="avis[]" value="dagbladet" />dagbladet <br />
-  <input type ="checkbox" id="avis" name="avis[]" value="dn" />dn <br />
+  <input type ="checkbox" id="avis" name="avis[]" value="e24" />e24 <br />
   <input type ="checkbox" id="avis" name="avis[]" value="vg" />vg <br />
   <input type="submit" value="Velg aviser" id="velgAviserKnapp" name="velgAviserKnapp" /> 
 </form>
